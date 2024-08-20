@@ -1,7 +1,5 @@
 import { auth } from '@/auth';
 import { Button } from '@/components/ui/button';
-import NextAuth from 'next-auth';
-import Image from 'next/image';
 import Link from 'next/link';
 
 export default async function Home() {
@@ -10,14 +8,6 @@ export default async function Home() {
     <div className='flex flex-col flex-1'>
       <main className='flex justify-center flex-1'>
         <div className='items-center flex flex-col sm:flex-row gap-20 justify-center mx-auto p-10 w-full sm:py-20 sm:w-[1000px]'>
-          {/* <div>
-            <Image
-              src='/images/owl-landing-no-bg.png'
-              width='400'
-              height='400'
-              alt='owl'
-            />
-          </div> */}
           <div className='text-center flex gap-6 flex-col'>
             <h1 className='text-3xl font-bold'>Get Your Quizz On!</h1>
             <h3 className='text-md'>
