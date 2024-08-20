@@ -34,7 +34,7 @@ export default function QuizzQuestions(props: Props) {
     { questionId: number; answerId: number }[]
   >([]);
   const [progressBarValue, setProgressBarValue] = useState<number>(-1);
-  const [countdown, setCountdown] = useState<number>(5);
+  const [countdown, setCountdown] = useState<number>(4);
   const router = useRouter();
 
   const handleNext = useCallback(() => {
@@ -46,7 +46,7 @@ export default function QuizzQuestions(props: Props) {
 
     if (currentQuestion < questions.length - 1) {
       setCurrentQuestion(currentQuestion + 1);
-      setCountdown(5);
+      setCountdown(4);
     } else {
       setProgressBarValue(-1);
       setSubmitted(true);
@@ -60,7 +60,7 @@ export default function QuizzQuestions(props: Props) {
       const timer = setInterval(() => {
         setCountdown((prevCountdown) => {
           setProgressBarValue(
-            (prevProgressBarValue) => prevProgressBarValue - 10
+            (prevProgressBarValue) => prevProgressBarValue - 12.5
           );
           return prevCountdown - 1;
         });
@@ -70,6 +70,9 @@ export default function QuizzQuestions(props: Props) {
       handleNext();
     }
   }, [progressBarValue, handleNext, countdown, started]);
+
+  console.log('pgbar', progressBarValue);
+  console.log('counter', countdown);
 
   const handleAnswer = (answer: Answer, questionId: number) => {
     const newUserAnswersArr = [
