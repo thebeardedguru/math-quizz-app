@@ -60,7 +60,7 @@ export default function QuizzQuestions(props: Props) {
       const timer = setInterval(() => {
         setCountdown((prevCountdown) => {
           setProgressBarValue(
-            (prevProgressBarValue) => prevProgressBarValue - 12.5
+            (prevProgressBarValue) => prevProgressBarValue - 25
           );
           return prevCountdown - 1;
         });
@@ -108,7 +108,7 @@ export default function QuizzQuestions(props: Props) {
   };
 
   const handleExit = () => {
-    router.push('/quizz/2');
+    router.push('/');
   };
 
   const scorePercentage: number = Math.round((score / questions.length) * 100);
